@@ -1,0 +1,165 @@
+/* Base styles, design tokens and resets for the Taskly app. */
+
+:root {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+
+  --bg: #f4f5f9;
+  --bg-glow: #e8eaf6;
+  --surface: #ffffff;
+  --surface-muted: #f8f9fc;
+  --border: #e3e6ef;
+  --border-strong: #cfd4e3;
+
+  --text: #161a24;
+  --text-muted: #5b6478;
+  --text-subtle: #656d80;
+
+  --accent: #4f46e5;
+  --accent-strong: #4338ca;
+  --accent-solid: #4f46e5;
+  --accent-solid-hover: #4338ca;
+  --accent-soft: #eef0fe;
+  --accent-ring: rgba(79, 70, 229, 0.28);
+
+  --high: #c81e42;
+  --high-soft: #fdeaef;
+  --high-border: #f5bfcd;
+
+  --medium: #9a5a0c;
+  --medium-soft: #fdf3e3;
+  --medium-border: #f0d5a0;
+
+  --low: #0b6f4b;
+  --low-soft: #e6f6ef;
+  --low-border: #a8dfc7;
+
+  --success: #0b6f4b;
+  --danger: #c81e1e;
+  --danger-soft: #fef2f2;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 6px 20px -8px rgba(16, 24, 40, 0.18);
+  --shadow-lg: 0 24px 48px -24px rgba(16, 24, 40, 0.28);
+
+  --transition: 160ms ease;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1016;
+    --bg-glow: #171b28;
+    --surface: #171a23;
+    --surface-muted: #1c202b;
+    --border: #272c3a;
+    --border-strong: #39405280;
+
+    --text: #eef0f6;
+    --text-muted: #aab2c4;
+    --text-subtle: #8d96aa;
+
+    --accent: #8b85f5;
+    --accent-strong: #a09bff;
+    --accent-solid: #5850d0;
+    --accent-solid-hover: #4b44bd;
+    --accent-soft: #221f3d;
+    --accent-ring: rgba(124, 118, 241, 0.35);
+
+    --high: #fb7185;
+    --high-soft: #2c1a22;
+    --high-border: #4a2733;
+
+    --medium: #fbbf24;
+    --medium-soft: #2c2417;
+    --medium-border: #4a3d20;
+
+    --low: #34d399;
+    --low-soft: #14291f;
+    --low-border: #1f4234;
+
+    --success: #34d399;
+    --danger: #f87171;
+    --danger-soft: #2c1a1a;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 24px -10px rgba(0, 0, 0, 0.7);
+    --shadow-lg: 0 24px 48px -24px rgba(0, 0, 0, 0.8);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1000px 520px at 50% -240px, var(--bg-glow), transparent 70%);
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Visible focus for keyboard users on every interactive control. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
